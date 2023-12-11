@@ -1,0 +1,281 @@
+.about_overview_container{
+    margin-block: 4rem;
+}
+.about_overview_container h2{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #173e62;
+}
+.about_overview{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+.about_overview_text{
+    padding: 2rem 4rem;
+}
+
+.about_overview_text p{
+    /* width: 60vw; */
+    /* margin-top: 1rem; */
+    line-height: 1.7rem;
+    /* word-spacing: 1rem; */
+    text-align: justify;
+    color: #585858;
+
+}
+.about_profile_img{
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_profile_img img{
+    width: 250px;
+    
+}
+.about_profile h3{
+    margin-top: 10px;
+}
+.about_profile p{
+    color: #5e5e5e;
+    margin-top: 5px;
+}
+.about_overview_profiles{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.about_profile{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.about_team_supercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.about_team{
+    margin-top: 1rem;
+}
+.about_team h3{
+    color: #585858;
+}
+.about_team_container{
+    margin-top: 10px;
+}
+.about_team_item{
+    margin-block: 5px;
+}
+.about_team_item p{
+    font-size: 14px;
+}
+.about_mission{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(#173e62d0,#173e62d0), url(../../assets/dummt_project2.jpg);
+    background-size: cover;
+    padding-block: 5rem
+}
+.about_mission_img img{
+    width: 40vw;
+    border-radius: 10px;
+}
+.about_mission_vission{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+.about_mission_text{
+    width: 40vw;
+}
+.about_mission_text h2{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #bda588;
+}
+.about_mission_text p{
+    line-height: 1.7rem;
+    word-spacing:5px;
+    color: white;
+}
+
+.about_vission_text{
+    width: 40vw;
+}
+.about_vission_text h2{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #bda588;
+}
+.about_vission_text p{
+    line-height: 1.7rem;
+    word-spacing: 5px;
+    color: white;
+}
+
+
+.about_counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    background-color: #bda588 ;
+    padding-block: 2rem;
+    color: white;
+    margin-top: 3rem;
+}
+.about_counter_item{
+    text-align: center;
+    line-height: 4rem;
+
+}
+.about_counter_item h3{
+    font-size: 4rem;
+}
+
+
+
+
+
+/* **************GENERAL INFO CSS ****************** */
+
+.about_general_info{
+    background-color: #fff3e6;
+    padding-block: 3rem;
+}
+.about_general_info h2{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #173e62;
+    margin-bottom: 2rem;
+}
+.about_general_info_img img{
+    width:750px;
+    border-radius: 10px;
+}
+.about_general_info_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_general_info_text{
+    width:70vw;
+    height: 400px;  
+    margin-left: -200px;
+    box-shadow: 0 0 2px 5px #00000021;
+    border-radius: 10px;
+    background: linear-gradient(#173e62c5,#173e62c5),url(../../assets/paradiseimg.jpeg);
+    background-size: cover;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.about_general_info_text p{
+    color: rgb(228, 228, 228);
+}
+.about_general_info_text p b{
+    color: #bda588;
+}
+.about_general_info_text h3{
+    /* text-align: center; */
+    color: #bda588;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* **********MEDIA QUERIES ********************** */
+@media screen and (max-width:991px){
+    .about_mission{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about_mission_text{
+        width: 90vw;
+    }
+    .about_mission_img img{
+        width: 80vw;
+    }
+    .about_vission{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .about_vission_text{
+        width: 90vw;
+    }
+    .about_vission_img img{
+        width: 80vw;
+    }
+    .about_general_info_content{
+        flex-direction: column;
+    }
+    .about_general_info_text{
+        width:95vw;
+        height: 400px;  
+        margin-left:0px;
+    }
+    .about_general_info_img img{
+        width:80vw;
+    }
+
+}
+@media screen and (max-width:756px){
+    .about_overview{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .about_overview_profiles{
+        flex-direction: row;
+    }
+    .about_counter{
+        gap: 5rem;
+    }
+    .about_counter_item h3{
+        font-size: 3.5rem;
+    }
+    .about_team_supercontainer{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    .about_overview_text{
+        padding: 2rem 1rem;
+    }
+
+}
+@media screen and (max-width:576px){
+    .about_counter{
+        flex-direction: column;
+    }
+    .about_mission_text{
+        width: 95vw;
+    }
+    .about_mission_img img{
+        width: 90vw;
+    }
+    .about_vission_text{
+        width: 95vw;
+    }
+    .about_vission_img img{
+        width: 90vw;
+    }
+    .about_team_supercontainer{
+        flex-direction: column;
+    }
+
+}

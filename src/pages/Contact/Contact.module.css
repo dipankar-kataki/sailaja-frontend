@@ -1,0 +1,133 @@
+.contact_location{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    padding: 4rem 2rem;
+}
+.contact_location_content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.office_loc{
+    line-height: 2.5rem;
+
+}
+.contact_location_content h2{
+    font-size: 2.5rem;
+    width: 18ch;
+    color: rgb(23,62,98);;
+
+}
+.office_loc h4{
+    color: rgb(23,62,98);;
+}
+.office_loc p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+.contact_subhead{
+    color: #BC986B;
+    font-weight: 600;
+}
+.contactmap{
+    width: 50vw;
+    height: 60vh;
+}
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 4rem;
+}
+.contact_form p{
+    color: #BC986B;
+    font-weight: 600;
+}
+.contact_form h2{
+    font-size: 2.5rem;
+    color: #173e62;;
+}
+.contact_form form{
+    padding-block: 3rem;
+}
+.contact_form form{
+    width: 60vw;
+}
+.contact_form form button{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+}
+
+.contact_form form textarea{
+    width: 100%;
+    height: 250px;
+    padding: 1rem;
+}
+.button_primary{
+    width: 170px;
+    height: 50px;
+    background-color: #bda588;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+
+}
+
+.button_primary:hover{
+    background-color: #BC986B;
+
+}
+.formError{
+    color: red!important;
+    margin-top: 10px;
+    font-weight: 400!important;;
+}
+@media screen and (max-width:991px){
+    .contact_location{
+        padding: 4rem 1rem;
+        gap: 2rem;
+    }
+    .contactmap{
+        width:350px;
+        height: 50vh;
+    }
+    .contact_location_content h2{
+        font-size: 2.2rem;
+        width: 16ch;
+    }
+}
+@media screen and (max-width:756px) {
+    .contact_location{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .contactmap{
+        width:90vw;
+        height: 50vh;
+    }
+    .contact_location_content h2{
+        font-size: 2.2rem;
+        width: 90vw;
+    }
+    .contact_location_content{
+        gap: 1rem;
+       
+    }
+    .contact_form form{
+        width: 95vw;
+    }
+    .contact_form h2{
+        font-size: 2rem;
+    }
+    
+}

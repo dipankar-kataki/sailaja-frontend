@@ -1,0 +1,150 @@
+.projects{
+    padding-inline: 3rem;
+    padding-block: 5rem;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+.projects_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.projects_header_left{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.projects_header_left p{
+    color: #BFA78B;
+    font-weight: 600;
+}
+.projects_header_left h2{
+    font-size: 2.5rem;
+    color: #173e62;
+}
+.projects_header_right h3{
+    font-size: 5rem;
+    color: #BFA78B;
+}
+.projects_body{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 4rem;
+    gap: 1.5rem;
+}
+.project_single{
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 0 3px 5px #f1f1f1d5;
+    cursor: pointer;
+}
+
+.project_image{
+    width: 400px;
+    height: 250px;
+    overflow:hidden;
+    object-fit: cover;
+}
+.project_image img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-out;
+    border-radius: 5px;
+    object-fit: cover;
+   
+}
+.project_image img:hover{
+    width: 103%;
+}
+.project_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 1rem;
+}
+.project_info h3{
+    color: #173e62 ;
+    font-size: 1.5rem;
+    text-decoration: none;
+    position: relative;
+
+}
+.project_info h3::before{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 60px;
+    background-color: #BC986B;
+    right: 110%;
+    top: 50%;
+
+}
+.project_info p{
+    color: #646464;
+}
+.button_primary{
+    width: 170px;
+    height: 50px;
+    background-color: #bda588;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+
+}
+
+.button_primary:hover{
+    background-color: #BC986B;
+
+}
+@media screen and (max-width: 1344px){
+    .projects_body{
+        width: 824px;
+        margin: auto;
+    }
+    .projects{
+        max-width: 824px;
+        padding-inline: 0rem;
+}
+}
+@media screen and (max-width: 1344px){
+    .projects_body{
+        width: 824px;
+        margin: auto;
+
+    }
+
+}
+@media screen and (max-width: 921px){
+    .projects_body{
+        width: 400px;
+        margin: auto;
+        justify-content: center;
+    }
+    .projects_header_left h2{
+        text-align: center;
+    }
+    .projects{
+        max-width: 400px;   
+    }
+
+}
+@media screen and (max-width: 420px){
+    .projects_body{
+        width: 380px;
+    }
+    .project_image{
+        width: 380px;
+    }
+    .projects_header_left h2{
+        font-size: 2rem;
+        padding-left: 10px;
+    }
+    
+
+}

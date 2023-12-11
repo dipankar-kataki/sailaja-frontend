@@ -1,0 +1,173 @@
+/* footer{
+    margin-top: 5rem;
+} */
+.upper_footer{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:linear-gradient(to top, rgb(23, 62, 98), rgba(23, 62, 98, 0.637)),url(../../assets//dummysliderimg1.jpg);
+    background-size: cover;
+    padding-left: 5rem;
+    border-bottom: 1px solid gray;
+}
+.upper_footer h2{
+    margin-block: 3rem;
+    font-size: 2.5rem;
+    color: white;
+}
+.footer_contacts{
+    display: flex;
+    gap: 4rem;
+}
+.footer_contacts p,strong{
+    color: white;
+}
+.footer_contact{
+    line-height: 2rem;
+}
+
+
+.button_primary{
+    width: 170px;
+    height: 50px;
+    margin-block: 2rem;
+    background-color: #bda588;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+
+}
+
+.button_primary:hover{
+    background-color: #BC986B;
+
+}
+.footer_social_links{
+    display: flex;
+    gap: 2rem;
+}
+.footer_social_links a{
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+.main_footer{
+    background-color: rgb(23, 62, 98);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-block: 7rem;
+    color: white;
+   
+
+}
+/* .main_footer div{
+    width: 20vw;
+} */
+.footer_links{
+    display: flex;
+    gap: 7rem;
+}
+.main_footer_about{
+    width: 40ch;
+}
+.main_footer_about p{
+    font-weight: 300;
+    color: #c7c7c7;
+}
+.main_footer h3{
+    margin-bottom: 1rem;
+
+}
+ .main_footer div p{
+    font-weight: 300;
+    color: #c7c7c7;
+}
+.main_footer div form {
+    margin-top: 2rem;
+}
+.footer_nav_link{
+    display: flex;
+    gap: 10px;
+    align-items: center; 
+    margin-block: 1rem;
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+}
+.main_footer div form input{
+    width: 300px!important;
+    height: 40px!important;
+    margin-block: 0!important;
+}
+.btn_footer{
+    width: 300px!important;
+    height: 40px!important;
+    margin-block: 0!important;
+
+}
+.footer_logo img{
+    width: 20vw;
+    filter: invert(1);
+    margin-top: -2rem;
+
+}
+.copyright{
+    background-color: rgb(23, 62, 98);
+    text-align: center;
+    color: white;
+    padding-bottom: 3rem;
+    font-weight: 300;
+}
+
+@media screen and (max-width:991px){
+    
+    .main_footer{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding-block: 3rem;
+    }
+    .main_footer_about{
+        width: 90ch;
+    }
+    .main_footer_about h3{
+        text-align: center;
+    }
+    .footer_logo img{
+        width: 300px;
+    
+    }
+    
+}
+@media screen and (max-width:730px){
+    .upper_footer{
+        height: auto;
+        padding-block: 4rem;
+        align-items: center;
+       
+        padding-left: 0rem;
+    }
+    .footer_contacts{
+        flex-direction: column;
+        text-align: center;
+    }
+    .main_footer_about{
+        width: 95vw;
+    }
+    .footer_social_links{
+        justify-content: center;
+    }
+    
+}
+@media screen and (max-width : 576px){
+    .footer_links{
+        gap: 4rem;
+    }
+    
+}

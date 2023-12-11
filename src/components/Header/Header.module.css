@@ -1,0 +1,30 @@
+.header_container{
+    height: 70vh;
+    background: linear-gradient(to top, rgba(23, 62, 98, 0.637), rgba(23, 62, 98, 0.637)), url(../../assets/HomeBannerPics/paradisetwo.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 2rem;
+}
+.header_container h2{
+    font-size: 3rem;
+}
+.header_nav{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.header_nav_prev{
+    text-decoration: none;
+    color: white;
+}
+@media screen and (max-width:576px){
+    .header_container h2{
+        font-size: 2rem;
+    }
+
+}
