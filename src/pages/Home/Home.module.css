@@ -12,7 +12,7 @@
     position: relative;
 }
 .slideritem1{
-    background: linear-gradient(to top, rgba(23, 62, 98, 0.637), rgba(23, 62, 98, 0.637)), url(images/HomeBannerPics/paradiseone.jpeg);
+    background: linear-gradient(to top, rgba(23, 62, 98, 0.637), rgba(23, 62, 98, 0.637)), url(/images/HomeBannerPics/paradiseone.jpeg);
     background-size: cover;
 }
 .slideritem2{

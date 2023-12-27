@@ -16,6 +16,7 @@ import saikiaimg from "../../assets/Saikia Complex/WhatsApp Image 2023-08-04 at 
 import sunshineimg from "../../assets/Sunshine Residency/WhatsApp Image 2023-08-04 at 15.36.16 (1).jpeg"
 import paradiseimg from "../../assets/Sailaja's Paradise/WhatsApp Image 2023-08-04 at 15.44.21.jpeg"
 import moment from 'moment'
+import axiosInstance, { publicURL } from '../../api/apiConfig'
 
 
 const Projects = () => {
@@ -25,9 +26,8 @@ const Projects = () => {
   
 
   useEffect(()=>{
-    axios.get(`http://sailajaconstruction.com//api/project/web?status=ongoing`)
+    axiosInstance.get(`api/project/web?status=ongoing`)
   .then(function (response) {
-     console.log(response.data.data);
      setOngoingProjects(response.data.data)
   })
   .catch(function (error) {
@@ -49,7 +49,7 @@ const Projects = () => {
             <button  onClick={()=>{ ongoingProject.description && navigate("/singleproject", {state:{projectInfo: ongoingProject}})}} className={styles.project_single} key={ongoingProject._id}>
             <div className={styles.project}>
               <div className={styles.project_image}>
-                <img src={`http://sailajaconstruction.com//${ongoingProject.projectImage}`} alt="" />
+                <img src={`${publicURL}${ongoingProject.projectImage}`} alt="" />
               </div>
               <div className={styles.project_info}>
                 <h3>{ongoingProject.projectName}</h3> 

@@ -6,8 +6,8 @@ import axios from 'axios';
 
 import styles from "./Testimonials.module.css"
 
-import randomperson from "../../assets/random_person.jpg"
-
+import axiosInstance from '../../api/apiConfig'
+import { publicURL } from '../../api/apiConfig';
 
 
 const Testimonials = ({isGlobal,projectId}) => {
@@ -15,7 +15,7 @@ const Testimonials = ({isGlobal,projectId}) => {
 
     useEffect(()=>{
         isGlobal ? (
-        axios.get(`http://sailajaconstruction.com//api/testimony?isGlobal=${isGlobal}`)
+            axiosInstance.get(`/api/testimony?isGlobal=${isGlobal}`)
       .then(function (response) {
          console.log(response.data.data);
          setTestimonials(response.data.data)
@@ -25,7 +25,7 @@ const Testimonials = ({isGlobal,projectId}) => {
         console.log(error);
       })
     ):(
-        axios.get(`http://sailajaconstruction.com//api/testimony/?projectId=${projectId}&isGlobal=${isGlobal}`)
+        axiosInstance.get(`api/testimony/?projectId=${projectId}&isGlobal=${isGlobal}`)
         .then(function (response) {
            console.log(response.data.data);
            setTestimonials(response.data.data)
@@ -71,7 +71,7 @@ const Testimonials = ({isGlobal,projectId}) => {
                     <div className={styles.testimonial_card}>
                         <div className={styles.testimonial_card_identity}>
                             <div className={styles.testimonial_image}>
-                                <img src={`http://sailajaconstruction.com//${testimonialItem.userImage}`} alt="" />
+                                <img src={`${publicURL}${testimonialItem.userImage}`} alt="" />
                             </div>
                             <div className={styles.testimonial_card_identity_name}>
                                 <h4>{testimonialItem.name}</h4>

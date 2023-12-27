@@ -8,14 +8,15 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import moment from 'moment'
 import durgaimg from "../../assets/Durga Residency/WhatsApp Image 2023-08-04 at 15.51.23 (1).jpeg"
+import axiosInstance, { publicURL } from '../../api/apiConfig'
 
 const Projects = () => {
   const [upcomingProjects, setUpcomingProjects] = useState([]);
   const navigate = useNavigate();
   useEffect(()=>{
-    axios.get(`http://sailajaconstruction.com//api/project/web?status=upcoming`)
+    axiosInstance.get(`api/project/web?status=upcoming`)
   .then(function (response) {
-     console.log(response.data.data);
+
      setUpcomingProjects(response.data.data)
   })
   .catch(function (error) {
@@ -37,7 +38,7 @@ const Projects = () => {
             <button onClick={()=>{upcomingProject.description && navigate("/singleproject", {state:{projectInfo: upcomingProject}})}} className={styles.project_single} key={upcomingProject._id}>
             <div className={styles.project}>
               <div className={styles.project_image}>
-                <img src={`http://sailajaconstruction.com//${upcomingProject.projectImage}`} alt="" />
+                <img src={`${publicURL}${upcomingProject.projectImage}`} alt="" />
               </div>
               <div className={styles.project_info}>
                 <h3>{upcomingProject.projectName}</h3>

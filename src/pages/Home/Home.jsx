@@ -21,7 +21,7 @@ import communicationicon from "../../assets/icons/svg/Transparent Communication-
 import buyicon from "../../assets/icons/svg/Buying Made Easy-04.svg"
 import trusticon from "../../assets/icons/svg/Trustworthy Partners-05.svg"
 import showcaseicon from "../../assets/icons/svg/Detailed Property Showcase-06.svg"
-
+import axiosInstance, { publicURL } from '../../api/apiConfig'
  
 import homeaboutimg from "../../assets/Sailaja's Paradise/WhatsApp Image 2023-08-04 at 15.44.21 (1).jpeg"
 import Swal from 'sweetalert2'
@@ -34,9 +34,8 @@ const Home = () => {
   const [completedProjects, setCompletedProjects] = useState([])
   const navigate = useNavigate()
   useEffect(()=>{
-    axios.get(`http://sailajaconstruction.com//api/project/web`)
+    axiosInstance.get(`api/project/web`)
   .then(function (response) {
-     console.log(response.data.data);
      setCompletedProjects(response.data.data)
   })
   .catch(function (error) {
@@ -47,7 +46,7 @@ const Home = () => {
   const form = useRef(null);
 
   useEffect(()=>{
-    axios.get('http://sailajaconstruction.com//api/project/list')
+    axiosInstance.get('api/project/list')
   .then(function (response) {
     // console.log(response.data.data);
     setAllProjects(response.data.data)
@@ -127,7 +126,7 @@ const Home = () => {
     enquirySubmitBtn.disabled = true;
     enquirySubmitBtn.innerHTML='Please Wait..'
 
-    axios.post('http://sailajaconstruction.com//api/enquiry', {
+    axiosInstance.post('api/enquiry', {
       name: enquiryForm.name,
       email: enquiryForm.email,
       mobile: enquiryForm.phonenumber,
@@ -174,7 +173,6 @@ const Home = () => {
 
   const setError = (id,error) => {
     const element = document.getElementById(id);
-    console.log(element)
     element.getElementsByClassName('formErrorClass')[0].innerHTML = error;
   }
 
@@ -292,10 +290,10 @@ const Home = () => {
         </div>
         <div className={styles.projects_body}>
         {completedProjects.slice(0, 6).map(completedProject => (
-            <button to='/singleproject' onClick={()=>{navigate("/singleproject", {state:{projectInfo: completedProject}})}} className={styles.project_single} key={completedProject._id}>
+            <button to='/singleproject' onClick={()=>{completedProject.description && navigate("/singleproject", {state:{projectInfo: completedProject}})}} className={styles.project_single} key={completedProject._id}>
             <div className={styles.project}>
               <div className={styles.project_image}>
-                <img src={`http://sailajaconstruction.com//${completedProject.projectImage}`} alt="" />
+                <img src={`${publicURL}${completedProject.projectImage}`} alt="" />
               </div>
               <div className={styles.project_info}>
                 <h3>{completedProject.projectName}</h3>

@@ -8,7 +8,7 @@ import {FaLocationArrow} from 'react-icons/fa'
 import {BsFillEnvelopeFill} from 'react-icons/bs'
 import {AiFillPhone} from 'react-icons/ai'
 import Swal from 'sweetalert2'
-import axios from 'axios'
+import axiosInstance from '../../api/apiConfig'
 
 import { TextField } from '@mui/material'
 
@@ -81,7 +81,7 @@ const Contact = () => {
             contactSubmitBtn.disabled = true;
             contactSubmitBtn.innerHTML='Please Wait..'
 
-            axios.post('http://sailajaconstruction.com//api/contact', {
+            axiosInstance.post('api/contact', {
             name: contactData.fname,
             email: contactData.email,
             subject: contactData.subject,

@@ -14,8 +14,9 @@
 
 .project_overview_img img{
     width: 500px;
+    height: 400px;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 .project_overview_table{
     display: flex;
@@ -223,6 +224,7 @@
     }
     .project_overview_img img{
         width: 700px;
+        
     }
     .project_overview_table_content{
         display: flex;

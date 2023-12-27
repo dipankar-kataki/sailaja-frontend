@@ -24,6 +24,7 @@ import firesafetyicon from "../../assets/icons/firesafetyicon.png"
 import lifticon from "../../assets/icons/lifticon.png"
 import balconyicon from "../../assets/icons/balconyicon.png"
 import peticon from "../../assets/icons/peticon.png"
+import { publicURL } from '../../api/apiConfig'
 
 
 
@@ -40,12 +41,11 @@ const SingleProject = () => {
     const [projectDesc,setProjectDesc] = useState(location.state.projectInfo);
     const [amenities,setAmenities]= useState([]);
 
-    console.log(projectDesc.endDate)
 
    
 
     useEffect(()=> {
-        axios.get(`http://sailajaconstruction.com//api/gallery/project/${projectDesc._id}`)
+        axios.get(`http://sailajaconstruction.com/backend/api/gallery/project/${projectDesc._id}`)
         .then(function (response) {
             setGallery(response.data.data)
             
@@ -56,7 +56,7 @@ const SingleProject = () => {
     },[])
 
     useEffect(()=>{
-        axios.get(`http://sailajaconstruction.com//api/amenity/project/${projectDesc._id}`)
+        axios.get(`http://sailajaconstruction.com/backend/api/amenity/project/${projectDesc._id}`)
         .then(function(response){
             console.log(response)
             console.log(response.data.data.amenities)
@@ -72,8 +72,8 @@ const SingleProject = () => {
 
 
     const images = gallery.map((galleryItem) => ({
-        original: `http://sailajaconstruction.com/${galleryItem.filePath}`,
-        thumbnail: `http://sailajaconstruction.com/${galleryItem.filePath}`
+        original: `${publicURL}${galleryItem.filePath}`,
+        thumbnail: `${publicURL}${galleryItem.filePath}`
       }));
     console.log(images)
 
@@ -85,15 +85,15 @@ const SingleProject = () => {
             <h2>Overview</h2>
             <div className={styles.project_overview_container}>
                 <div className={styles.project_overview_img}>
-                    <img src={`http://sailajaconstruction.com//${projectDesc.projectImage}`} alt="" />
+                    <img src={`${publicURL}${projectDesc.projectImage}`} alt="" />
                 </div>
                 <div className={styles.project_overview_text}>
                     <p>{projectDesc.description}</p>
                     <div className={styles.project_download_btn}>
-                        {projectDesc.projectNoc &&  <a href={`http://sailajaconstruction.com//${projectDesc.projectNoc}`} target='_blank'  className={styles.button_primary}>Download NOC</a> }
-                        {projectDesc.approvedPlan &&  <a href={`http://sailajaconstruction.com//${projectDesc.approvedPlan}`} target='_blank'  className={styles.button_primary}>Download Approved Plan</a> }
-                        {projectDesc.brochure &&  <a href={`http://sailajaconstruction.com//${projectDesc.brochure}`} target='_blank'  className={styles.button_primary}>Download Brochure</a> }
-                        {projectDesc.reraNoc &&  <a href={`http://sailajaconstruction.com//${projectDesc.reraNoc}`} target='_blank'  className={styles.button_primary}>Download ReraNoc</a> }
+                        {projectDesc.projectNoc &&  <a href={`${publicURL}${projectDesc.projectNoc}`} target='_blank'  className={styles.button_primary}>Download NOC</a> }
+                        {projectDesc.approvedPlan &&  <a href={`${publicURL}${projectDesc.approvedPlan}`} target='_blank'  className={styles.button_primary}>Download Approved Plan</a> }
+                        {projectDesc.brochure &&  <a href={`${publicURL}${projectDesc.brochure}`} target='_blank'  className={styles.button_primary}>Download Brochure</a> }
+                        {projectDesc.reraNoc &&  <a href={`${publicURL}${projectDesc.reraNoc}`} target='_blank'  className={styles.button_primary}>Download ReraNoc</a> }
                        
                         
                     </div>
@@ -133,7 +133,7 @@ const SingleProject = () => {
             <div className={styles.project_amenities_container}>
                     {amenities.map(amenity=>(
                         <div className={styles.project_amenity} key={amenity._id}>
-                        <img src={`http://sailajaconstruction.com//${amenity.amenityPath}`} alt="" />
+                        <img src={`${publicURL}${amenity.amenityPath}`} alt="" />
                         <p>{amenity.amenityName}</p>
                     </div>
                     ))}
